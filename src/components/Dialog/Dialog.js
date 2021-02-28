@@ -1,10 +1,10 @@
 import React from 'react';
-import styles from './Post.module.css';
+import styles from './Dialog.module.css';
 
-const Post = (props) => {
+const Dialog = (props) => {
     return (
         <article className={styles.post}>{props.text}</article>
     );
 }
 
-export default Post;
+export default Dialog;
