@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './CounterButton.module.css';
 
 const Counter = ({ counter }) => {
     return <h1>{`Counter value is: ${counter}`}</h1>
@@ -26,7 +27,7 @@ class CounterButton extends React.Component {
         return (
             <div>
                 <Counter counter={counter} />
-                <button className={'btn'} onClick={this.handleClick}>Add One</button>
+                <button className={styles.btn} onClick={this.handleClick}>Add One</button>
             </div>
         );
     }

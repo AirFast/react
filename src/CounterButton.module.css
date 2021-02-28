@@ -1,0 +1,13 @@
+.btn {
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    background: coral;
+    outline: none;
+    cursor: pointer;
+    transition: all .15s ease-in-out;
+}
+
+.btn:hover {
+    background: darkcyan;
+}
