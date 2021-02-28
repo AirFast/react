@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import CounterButton from './CounterButton';
+import App from './App';
 
 ReactDOM.render(
-    <CounterButton />,
+    <App />,
     document.getElementById('root')
 );
