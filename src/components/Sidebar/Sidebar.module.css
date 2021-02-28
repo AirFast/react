@@ -1,0 +1,16 @@
+.sidebar {
+    position: relative;
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+
+.sidebar:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background: #eee;
+}
