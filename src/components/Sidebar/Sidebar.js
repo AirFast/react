@@ -5,7 +5,7 @@ import Nav from './Nav/Nav';
 const Sidebar = () => {
     return (
         <aside className={styles.sidebar}>
-            <Nav />
+            <Nav/>
         </aside>
     );
 }
