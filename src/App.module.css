@@ -9,4 +9,6 @@
 .content {
     flex: 0 0 75%;
     max-width: 75%;
+    height: 100vh;
+    overflow-y: auto;
 }
