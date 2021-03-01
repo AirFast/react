@@ -2,24 +2,14 @@ import React from 'react';
 import styles from './App.module.css';
 import Dialog from './components/Dialog/Dialog';
 import Sidebar from './components/Sidebar/Sidebar';
-import {Route, Switch} from 'react-router-dom';
+import {Route} from 'react-router-dom';
 
-const App = () => {
+const App = (props) => {
     return (
         <div className={styles.container}>
-            <Sidebar/>
+            <Sidebar users={props.users}/>
             <div className={styles.content}>
-                <Switch>
-                    <Route path='/dialog/user-1'>
-                        <Dialog text={'Text from props 1'}/>
-                    </Route>
-                    <Route path='/dialog/user-2'>
-                        <Dialog text={'Text from props 2'}/>
-                    </Route>
-                    <Route path='/dialog/user-3'>
-                        <Dialog text={'Text from props 3'}/>
-                    </Route>
-                </Switch>
+                {props.users.map(user => <Route path={'/dialog/user/' + user.id} key={user.id} render={() => <Dialog user={user}/>}/>)}
             </div>
         </div>
     );
