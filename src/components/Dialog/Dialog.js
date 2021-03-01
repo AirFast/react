@@ -6,15 +6,10 @@ const Dialog = (props) => {
     return (
         <article className={styles.article}>
             <header className={styles.header}>
-                <h1>{props.user.name}</h1>
+                <h1>{props.dialog.user[0].name}</h1>
                 <h1>{props.auth[0].name}</h1>
             </header>
-            <div className={styles.user}>
-                {props.user.messages && props.user.messages.map((message, index) => <DialogItem message={message} key={index}/>)}
-            </div>
-            <div className={styles.auth}>
-                {props.auth[0].messages && props.auth[0].messages.map((message, index) => <DialogItem message={message} key={index}/>)}
-            </div>
+            {props.dialog.messages && props.dialog.messages.map((message, index) => <DialogItem message={message} key={index}/>)}
         </article>
     );
 }

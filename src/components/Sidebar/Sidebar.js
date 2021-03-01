@@ -5,7 +5,7 @@ import Nav from './Nav/Nav';
 const Sidebar = (props) => {
     return (
         <aside className={styles.sidebar}>
-            <Nav users={props.users}/>
+            <Nav dialogs={props.dialogs}/>
         </aside>
     );
 }

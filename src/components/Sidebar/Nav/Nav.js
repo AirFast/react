@@ -6,7 +6,7 @@ const Nav = (props) => {
     return (
         <nav>
             <ul className={styles.list}>
-                {props.users.map(user => <NavItem user={user} key={user.id}/>)}
+                {props.dialogs.map(dialog => <NavItem dialog={dialog} key={dialog.id}/>)}
             </ul>
         </nav>
     );
