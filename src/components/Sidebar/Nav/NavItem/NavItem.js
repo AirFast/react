@@ -7,7 +7,7 @@ const NavItem = (props) => {
         <li className={styles.item}>
             <NavLink to={'/dialog/user/' + props.user.id} activeClassName={styles.active}>
                         <span className={styles.avatar}>
-                            {/*<span className={styles.online}></span>*/}
+                            {props.user.online && <span className={styles.online}></span>}
                             <img src={props.user.img} alt=""/>
                         </span>
                 <span className={styles.name}>{props.user.name}</span>
