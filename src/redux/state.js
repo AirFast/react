@@ -212,11 +212,6 @@ let state = {
     auth: [
         {
             name: 'Andrew Petryk',
-            messages: [
-                {
-                    text: 'Hi baby! Of course, let\'s go... I\'ll call you at 6:00 p.m.'
-                }
-            ]
         },
     ]
 }
