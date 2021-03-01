@@ -4,3 +4,18 @@
     flex-direction: column;
     padding: 30px;
 }
+
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.user p {
+    margin-right: auto;
+}
+
+.auth p {
+    margin-left: auto;
+}

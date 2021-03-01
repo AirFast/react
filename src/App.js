@@ -7,9 +7,9 @@ import {Route} from 'react-router-dom';
 const App = (props) => {
     return (
         <div className={styles.container}>
-            <Sidebar users={props.users}/>
+            <Sidebar users={props.state.users}/>
             <div className={styles.content}>
-                {props.users.map(user => <Route path={'/dialog/user/' + user.id} key={user.id} render={() => <Dialog user={user}/>}/>)}
+                {props.state.users.map(user => <Route path={'/dialog/user/' + user.id} key={user.id} render={() => <Dialog user={user} auth={props.state.auth}/>}/>)}
             </div>
         </div>
     );

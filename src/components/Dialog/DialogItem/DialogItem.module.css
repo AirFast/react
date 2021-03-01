@@ -1,12 +1,13 @@
 .message {
     position: relative;
+    display: flex;
 }
 
-.message:before {
+.message:first-of-type:before {
     content: '';
     position: absolute;
     display: block;
-    top: 14px;
+    top: 10px;
     left: -10px;
     border-right: 10px solid #eeeeee;
     border-top: 0px solid transparent;
@@ -15,7 +16,8 @@
 
 .text {
     display: inline-block;
+    margin: 10px 0;
     padding: 20px;
     background: #eeeeee;
-    border-radius: 0 10px 10px 10px;
+    border-radius: 0 5px 5px 5px;
 }
