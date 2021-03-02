@@ -1,8 +1,10 @@
-.article {
+.section {
+    position: relative;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    padding: 30px;
+    padding: 30px 30px calc(150px + 60px);
+    height: 100%;
 }
 
 .header {
@@ -12,10 +14,48 @@
     justify-content: space-between;
 }
 
-.user p {
-    margin-right: auto;
+.footer {
+    position: fixed;
+    /*right: 40px;*/
+    bottom: 30px;
+    width: 100%;
+    max-width: calc((1200px / 100 * 75) - 60px);
+    height: 150px;
 }
 
-.auth p {
-    margin-left: auto;
+.textarea {
+    position: relative;
+    resize: none;
+    padding: 15px 20px;
+    width: 100%;
+    height: 100%;
+    background: #eeeeee;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    outline: none;
+    transition: all .25s ease-in-out;
+}
+
+.textarea:focus {
+    border: 1px solid #5895e0;
+}
+
+.button {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    outline: none;
+    border-radius: 100%;
+    background: #5895e0;
+    color: #ffffff;
+    font-size: 25px;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+.button:hover {
+    opacity: .9;
 }
