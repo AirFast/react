@@ -5,9 +5,15 @@ import App from './App';
 import {BrowserRouter} from 'react-router-dom';
 import state from './redux/state';
 
-ReactDOM.render(
-    <BrowserRouter>
-        <App state={state}/>
-    </BrowserRouter>,
-    document.getElementById('root')
-);
+const rerenderReactDOM = (state) => {
+
+    ReactDOM.render(
+        <BrowserRouter>
+            <App state={state}/>
+        </BrowserRouter>,
+        document.getElementById('root')
+    );
+
+}
+
+rerenderReactDOM(state.getState());
