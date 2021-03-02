@@ -30,7 +30,7 @@ let state = {
                     {
                         with: true,
                         time: '11:03',
-                        text: 'Ooh, I\'m very happy! By evening..'
+                        text: 'Ooh, I\'m very happy! By evening...'
                     },
                 ],
                 stateMessage: '',

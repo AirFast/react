@@ -4,8 +4,6 @@
     max-width: 25%;
     overflow: hidden;
     overflow-y: auto;
-    display: flex;
-    flex-direction: column;
 }
 
 .sidebar:after {

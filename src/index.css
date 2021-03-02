@@ -6,3 +6,8 @@ body {
     font: 14px "Century Gothic", Futura, sans-serif;
     margin: 0;
 }
+
+textarea, input {
+    font: 14px "Century Gothic", Futura, sans-serif;
+    line-height: 1.7;
+}
