@@ -10,7 +10,6 @@ const App = (props) => {
             <Sidebar dialogs={props.state.dialogs}/>
             <div className={styles.content}>
                 {props.state.dialogs.map(dialog => <Route path={'/dialog/' + dialog.id} key={dialog.id} render={() => <Dialog dialog={dialog} auth={props.state.auth}/>}/>)}
-
             </div>
         </div>
     );
