@@ -4,12 +4,11 @@ import DialogItem from './DialogItem/DialogItem';
 
 const Dialog = (props) => {
     const onChangeHandler = (e) => {
-        let message = e.target.value;
-        props.changeMessage(props.dialog.id, message);
+        props.dispatch({type: 'CHANGE-MESSAGE', id: props.dialog.id, message: e.target.value});
     }
 
     const onClickHandler = () => {
-        props.addMessage(props.dialog.id);
+        props.dispatch({type: 'ADD-MESSAGE', id: props.dialog.id});
         props.dialog.stateMessage = '';
     }
 

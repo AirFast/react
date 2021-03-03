@@ -9,7 +9,7 @@ const App = (props) => {
         <div className={styles.container}>
             <Sidebar dialogs={props.state.dialogs}/>
             <div className={styles.content}>
-                {props.state.dialogs.map(dialog => <Route path={'/dialog/' + dialog.id} key={dialog.id} render={() => <Dialog dialog={dialog} auth={props.state.auth} changeMessage={props.changeMessage} addMessage={props.addMessage}/>}/>)}
+                {props.state.dialogs.map(dialog => <Route path={'/dialog/' + dialog.id} key={dialog.id} render={() => <Dialog dialog={dialog} auth={props.state.auth} dispatch={props.dispatch}/>}/>)}
             </div>
         </div>
     );
