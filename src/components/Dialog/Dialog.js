@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Dialog.module.css';
 import DialogItem from './DialogItem/DialogItem';
-import {addMessageActionCreator, changeMessageActionCreator} from '../../redux/dialogsReducer';
+import {addMessageActionCreator, changeMessageActionCreator} from '../../redux/dialogs';
 
 const Dialog = (props) => {
     const onChangeHandler = (e) => {
@@ -16,7 +16,7 @@ const Dialog = (props) => {
         <section className={styles.section}>
             <header className={styles.header}>
                 <h1>{props.dialog.user[0].name}</h1>
-                <h1>{props.auth[0].name}</h1>
+                <h1>{/*props.auth[0].name*/}</h1>
             </header>
             <div className={styles.dialog}>
                 {props.dialog.messages && props.dialog.messages.map((message, index) => <DialogItem message={message}

@@ -3,10 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import {BrowserRouter} from 'react-router-dom';
-import store from './redux/store';
+import store from './redux/redux-store';
 
 const rerenderReactDOM = (state) => {
-
     ReactDOM.render(
         <BrowserRouter>
             <App state={state} dispatch={store.dispatch.bind(store)}/>
@@ -16,6 +15,7 @@ const rerenderReactDOM = (state) => {
 
 }
 
-rerenderReactDOM(store.getState());
+let state = store.getState();
 
-store.subscribe(rerenderReactDOM);
+rerenderReactDOM(state);
+store.subscribe(() => (rerenderReactDOM(state)));

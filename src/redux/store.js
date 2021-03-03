@@ -1,4 +1,4 @@
-import dialogsReducer from './dialogsReducer';
+import dialogs from './dialogs';
 
 let store = {
     _state: {
@@ -312,7 +312,7 @@ let store = {
     },
 
     dispatch: function (action) {
-        this._state.dialogs = dialogsReducer(this.getState().dialogs, action);
+        this._state.dialogs = dialogs(this.getState().dialogs, action);
 
         this._subscriber(this._state);
     },
