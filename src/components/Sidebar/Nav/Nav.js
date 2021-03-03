@@ -4,7 +4,7 @@ import NavItem from './NavItem/NavItem';
 
 const Nav = (props) => {
     return (
-        <nav>
+        <nav className={styles.nav}>
             <ul className={styles.list}>
                 {props.dialogs.map(dialog => <NavItem dialog={dialog} key={dialog.id}/>)}
             </ul>

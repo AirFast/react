@@ -2,8 +2,8 @@
     position: relative;
     flex: 0 0 25%;
     max-width: 25%;
+    height: 100vh;
     overflow: hidden;
-    overflow-y: auto;
 }
 
 .sidebar:after {

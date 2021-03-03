@@ -166,6 +166,101 @@ let store = {
                 ],
                 stateMessage: '',
             },
+            {
+                id: 6,
+                user: [
+                    {
+                        id: 5,
+                        online: false,
+                        img: 'https://images.unsplash.com/photo-1614595198554-9e8ef1c50171?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NjF8fGdpcmwlMjBmYWNlfGVufDB8fDJ8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+                        name: 'Diana Simumpande'
+                    },
+                ],
+                messages: [
+                    {
+                        with: true,
+                        time: '10:22',
+                        text: 'Hello!'
+                    },
+                ],
+                stateMessage: '',
+            },
+            {
+                id: 7,
+                user: [
+                    {
+                        id: 5,
+                        online: false,
+                        img: 'https://images.unsplash.com/photo-1614435763665-faf28450accc?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OTR8fGdpcmwlMjBmYWNlfGVufDB8fDJ8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+                        name: 'Helena Lopes'
+                    },
+                ],
+                messages: [
+                    {
+                        with: true,
+                        time: '10:22',
+                        text: 'Hello!'
+                    },
+                ],
+                stateMessage: '',
+            },
+            {
+                id: 8,
+                user: [
+                    {
+                        id: 5,
+                        online: true,
+                        img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8bWVufGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+                        name: 'Joseph Gonzalez'
+                    },
+                ],
+                messages: [
+                    {
+                        with: true,
+                        time: '10:22',
+                        text: 'Hello!'
+                    },
+                ],
+                stateMessage: '',
+            },
+            {
+                id: 9,
+                user: [
+                    {
+                        id: 5,
+                        online: true,
+                        img: 'https://images.unsplash.com/photo-1489980557514-251d61e3eeb6?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MzZ8fG1lbnxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60',
+                        name: 'Ben White'
+                    },
+                ],
+                messages: [
+                    {
+                        with: true,
+                        time: '10:22',
+                        text: 'Hello!'
+                    },
+                ],
+                stateMessage: '',
+            },
+            {
+                id: 10,
+                user: [
+                    {
+                        id: 5,
+                        online: false,
+                        img: 'https://images.unsplash.com/photo-1614153500026-7ba3867c3127?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjI1fHxnaXJsJTIwZmFjZXxlbnwwfHwyfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+                        name: 'Simona Sergi'
+                    },
+                ],
+                messages: [
+                    {
+                        with: true,
+                        time: '10:22',
+                        text: 'Hello!'
+                    },
+                ],
+                stateMessage: '',
+            },
         ],
         users: [
             {
