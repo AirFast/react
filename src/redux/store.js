@@ -1,3 +1,5 @@
+import dialogsReducer from './dialogsReducer';
+
 let store = {
     _state: {
         dialogs: [
@@ -310,26 +312,9 @@ let store = {
     },
 
     dispatch: function (action) {
-        if (action.type === 'CHANGE-MESSAGE') {
-            this.getState().dialogs[action.id - 1].stateMessage = action.message;
-            this._subscriber(this._state);
-        } else if (action.type === 'ADD-MESSAGE') {
-            if (this.getState().dialogs[action.id - 1].stateMessage.length) {
-                let today = new Date(),
-                    hours = today.getHours() >= 10 ? today.getHours() : '0' + today.getHours(),
-                    minutes = today.getMinutes() >= 10 ? today.getMinutes() : '0' + today.getMinutes();
+        this._state.dialogs = dialogsReducer(this.getState().dialogs, action);
 
-                let time = hours + ':' + minutes;
-
-                let newMessage = {
-                    with: false,
-                    time: time,
-                    text: this.getState().dialogs[action.id - 1].stateMessage
-                }
-                this.getState().dialogs[action.id - 1].messages.push(newMessage);
-                this._subscriber(this._state);
-            }
-        }
+        this._subscriber(this._state);
     },
 
     subscribe: function (options) {
