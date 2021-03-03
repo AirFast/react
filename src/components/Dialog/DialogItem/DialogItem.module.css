@@ -1,8 +1,5 @@
 .message {
     position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
 }
 
 .text {
@@ -12,7 +9,8 @@
     margin: 10px 0;
     padding: 15px 20px;
     background: #eeeeee;
-    flex: 0 0 50%;
+    max-width: 60%;
+    word-wrap: break-word;
 }
 
 .time {
@@ -21,26 +19,31 @@
     font-size: 12px;
 }
 
-.with:before {
+.with:before,
+.from:before {
     content: '';
     position: absolute;
     display: block;
     top: 10px;
-    left: -10px;
-    border-right: 10px solid #eeeeee;
     border-top: 0px solid transparent;
     border-bottom: 10px solid transparent;
 }
 
-.from:after {
-    content: '';
-    position: absolute;
-    display: block;
-    top: 10px;
+.with:before {
+    left: -10px;
+    border-right: 10px solid #eeeeee;
+}
+
+.from:before {
     right: -10px;
     border-left: 10px solid #eeeeee;
-    border-top: 0px solid transparent;
-    border-bottom: 10px solid transparent;
+}
+
+.with:after,
+.from:after {
+    content: "";
+    clear: both;
+    display: table;
 }
 
 .with + .with:before {
@@ -51,16 +54,16 @@
     display: block;
 }
 
-.from + .from:after {
+.from + .from:before {
     display: none;
 }
 
-.with + .from:after {
+.with + .from:before {
     display: block;
 }
 
 .with .text {
-    margin-right: auto;
+    float: left;
     border-radius: 0 5px 5px 5px;
 }
 
@@ -82,7 +85,7 @@
 }
 
 .from .text {
-    margin-left: auto;
+    float: right;
     border-radius: 5px 0 5px 5px;
 }
 

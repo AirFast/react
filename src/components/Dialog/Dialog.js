@@ -5,11 +5,12 @@ import DialogItem from './DialogItem/DialogItem';
 const Dialog = (props) => {
     const onChangeHandler = (e) => {
         let message = e.target.value;
-        console.log(message);
+        props.changeMessage(props.dialog.id, message);
     }
 
     const onClickHandler = () => {
-        console.log('click');
+        props.addMessage(props.dialog.id);
+        props.dialog.stateMessage = '';
     }
 
     return (
@@ -18,10 +19,12 @@ const Dialog = (props) => {
                 <h1>{props.dialog.user[0].name}</h1>
                 <h1>{props.auth[0].name}</h1>
             </header>
-            {props.dialog.messages && props.dialog.messages.map((message, index) => <DialogItem message={message} key={index}/>)}
+            <div className={styles.dialog}>
+                {props.dialog.messages && props.dialog.messages.map((message, index) => <DialogItem message={message} key={index}/>)}
+            </div>
             <footer className={styles.footer}>
-                <textarea className={styles.textarea} onChange={ onChangeHandler }></textarea>
-                <button className={styles.button} onClick={ onClickHandler }>+</button>
+                <textarea className={styles.textarea} onChange={ onChangeHandler } value={props.dialog.stateMessage}></textarea>
+                <button className={styles.button} onClick={ onClickHandler } disabled={!props.dialog.stateMessage.length}>+</button>
             </footer>
         </section>
     );
