@@ -309,6 +309,36 @@ let store = {
         return this._state;
     },
 
+    dispatch: function (action) { // { type: name }
+
+        if (action.type === 'CHANGE-MESSAGE') {
+
+            this.getState().dialogs[action.dialogId - 1].stateMessage = action.message;
+            this._subscriber(this._state);
+
+        } else if (action.type === 'ADD-MESSAGE') {
+
+            if (this.getState().dialogs[action.dialogId - 1].stateMessage.length) {
+                let today = new Date(),
+                    hours = today.getHours() >= 10 ? today.getHours() : '0' + today.getHours(),
+                    minutes = today.getMinutes() >= 10 ? today.getMinutes() : '0' + today.getMinutes();
+
+                let time = hours + ':' + minutes;
+
+                let newMessage = {
+                    with: false,
+                    time: time,
+                    text: this.getState().dialogs[action.dialogId - 1].stateMessage
+                }
+                this.getState().dialogs[action.dialogId - 1].messages.push(newMessage);
+                this._subscriber(this._state);
+
+            }
+
+        }
+
+    },
+
     changeMessage: function (dialogId, message) {
         this.getState().dialogs[dialogId - 1].stateMessage = message;
         this._subscriber(this._state);
