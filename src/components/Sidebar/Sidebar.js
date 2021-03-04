@@ -1,11 +1,11 @@
 import React from 'react';
 import styles from './Sidebar.module.css';
-import Nav from './Nav/Nav';
+import NavContainer from './Nav/NavContainer';
 
-const Sidebar = (props) => {
+const Sidebar = () => {
     return (
         <aside className={styles.sidebar}>
-            <Nav dialogs={props.dialogs}/>
+            <NavContainer/>
         </aside>
     );
 }

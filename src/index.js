@@ -11,9 +11,9 @@ const rerenderReactDOM = (state) => {
     ReactDOM.render(
         <React.StrictMode>
             <BrowserRouter>
-                {/*<Provider store={store}>*/}
+                <Provider store={store}>
                     <App state={state} dispatch={store.dispatch.bind(store)}/>
-                {/*</ Provider>*/}
+                </ Provider>
             </BrowserRouter>
         </React.StrictMode>
         ,
