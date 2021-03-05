@@ -1,15 +1,14 @@
 import React from 'react';
 import styles from './Dialog.module.css';
 import DialogItem from './DialogItem/DialogItem';
-import {addMessageActionCreator, changeMessageActionCreator} from '../../../redux/dialogs';
 
 const Dialog = (props) => {
     const onChangeHandler = (e) => {
-        props.dispatch(changeMessageActionCreator(props.dialog.id, e.target.value));
+        props.changeMessage(props.dialog.id, e.target.value);
     }
 
     const onClickHandler = () => {
-        props.dispatch(addMessageActionCreator(props.dialog.id));
+        props.addMessage(props.dialog.id);
     }
 
     return (

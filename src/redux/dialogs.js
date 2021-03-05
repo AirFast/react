@@ -267,8 +267,7 @@ let initState = [
 const dialogs = (state = initState, action) => {
     switch (action.type) {
         case CHANGE_MESSAGE:
-            state[action.id - 1].stateMessage = action.message;
-            return state;
+            return console.log([...state][action.id - 1].stateMessage = action.message);
         case ADD_MESSAGE:
             if (state[action.id - 1].stateMessage.length) {
                 let today = new Date(),

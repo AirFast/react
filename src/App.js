@@ -1,13 +1,13 @@
 import React from 'react';
 import styles from './App.module.css';
 import Sidebar from './components/Sidebar/Sidebar';
-import Content from './components/Content/Content';
+import ContentContainer from "./components/Content/ContentContainer";
 
-const App = (props) => {
+const App = () => {
     return (
         <div className={styles.container}>
             <Sidebar/>
-            <Content state={props.state} dispatch={props.dispatch}/>
+            <ContentContainer/>
         </div>
     );
 }

@@ -6,9 +6,7 @@ import Dialog from './Dialog/Dialog';
 const Content = (props) => {
     return (
         <div className={styles.content}>
-            {props.state.dialogs.map(dialog => <Route path={'/dialog/' + dialog.id} key={dialog.id}
-                                                      render={() => <Dialog dialog={dialog} auth={props.state.auth}
-                                                                            dispatch={props.dispatch}/>}/>)}
+            { props.dialogs.map(dialog => <Route path={'/dialog/' + dialog.id} key={dialog.id} render={() => <Dialog dialog={dialog} changeMessage={props.changeMessage} addMessage={props.addMessage}/>}/>)}
         </div>
     );
 }
