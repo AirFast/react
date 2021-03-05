@@ -15,8 +15,7 @@ const rerenderReactDOM = (state) => {
                     <App state={state} dispatch={store.dispatch.bind(store)}/>
                 </ Provider>
             </BrowserRouter>
-        </React.StrictMode>
-        ,
+        </React.StrictMode>,
         document.getElementById('root')
     );
 }
