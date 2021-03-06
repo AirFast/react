@@ -267,7 +267,14 @@ let initState = [
 const dialogs = (state = initState, action) => {
     switch (action.type) {
         case CHANGE_MESSAGE:
-            return console.log([...state][action.id - 1].stateMessage = action.message);
+            return [
+                ...state.map(d => {
+                    if (d.id === action.id) {
+                        return {...d, stateMessage: action.message};
+                    }
+                    return d;
+                })
+            ];
         case ADD_MESSAGE:
             if (state[action.id - 1].stateMessage.length) {
                 let today = new Date(),
@@ -276,15 +283,25 @@ const dialogs = (state = initState, action) => {
 
                 let time = hours + ':' + minutes;
 
-                let newMessage = {
-                    with: false,
-                    time: time,
-                    text: state[action.id - 1].stateMessage
-                }
-                state[action.id - 1].messages.push(newMessage);
-                state[action.id - 1].stateMessage = '';
+                return [
+                    ...state.map(d => {
+                        if (d.id === action.id) {
+                            return {
+                                ...d,
+                                messages: [
+                                    ...state[action.id - 1].messages, {
+                                        with: false,
+                                        time: time,
+                                        text: state[action.id - 1].stateMessage
+                                    }
+                                ],
+                                stateMessage: ''
+                            };
+                        }
+                        return d;
+                    })
+                ];
             }
-            return state;
         default:
             return state;
     }
