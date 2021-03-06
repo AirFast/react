@@ -276,32 +276,30 @@ const dialogs = (state = initState, action) => {
                 })
             ];
         case ADD_MESSAGE:
-            if (state[action.id - 1].stateMessage.length) {
-                let today = new Date(),
-                    hours = today.getHours() >= 10 ? today.getHours() : '0' + today.getHours(),
-                    minutes = today.getMinutes() >= 10 ? today.getMinutes() : '0' + today.getMinutes();
+            return [
+                ...state.map((d, index) => {
+                    if (d.id === action.id) {
+                        let today = new Date(),
+                            hours = today.getHours() >= 10 ? today.getHours() : '0' + today.getHours(),
+                            minutes = today.getMinutes() >= 10 ? today.getMinutes() : '0' + today.getMinutes();
 
-                let time = hours + ':' + minutes;
+                        let time = hours + ':' + minutes;
 
-                return [
-                    ...state.map(d => {
-                        if (d.id === action.id) {
-                            return {
-                                ...d,
-                                messages: [
-                                    ...state[action.id - 1].messages, {
-                                        with: false,
-                                        time: time,
-                                        text: state[action.id - 1].stateMessage
-                                    }
-                                ],
-                                stateMessage: ''
-                            };
-                        }
-                        return d;
-                    })
-                ];
-            }
+                        return {
+                            ...d,
+                            messages: [
+                                ...state[index].messages, {
+                                    with: false,
+                                    time: time,
+                                    text: state[index].stateMessage
+                                }
+                            ],
+                            stateMessage: ''
+                        };
+                    }
+                    return d;
+                })
+            ];
         default:
             return state;
     }
