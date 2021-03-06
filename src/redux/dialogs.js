@@ -282,9 +282,7 @@ const dialogs = (state = initState, action) => {
                         let today = new Date(),
                             hours = today.getHours() >= 10 ? today.getHours() : '0' + today.getHours(),
                             minutes = today.getMinutes() >= 10 ? today.getMinutes() : '0' + today.getMinutes();
-
                         let time = hours + ':' + minutes;
-
                         return {
                             ...d,
                             messages: [
