@@ -14,7 +14,7 @@ const Dialog = (props) => {
     return (
         <section className={styles.section}>
             <header className={styles.header}>
-                <h1>{props.dialog.user[0].name}</h1>
+                <h1>{props.dialog.user.name}</h1>
                 <h1>{/*props.auth[0].name*/}</h1>
             </header>
             <div className={styles.dialog}>

@@ -1,14 +1,9 @@
 import React from 'react';
-import styles from './App.module.css';
-import Sidebar from './components/Sidebar/Sidebar';
-import ContentContainer from "./components/Content/ContentContainer";
+import DialogsContainer from './components/Dialogs/DialogsContainer';
 
 const App = () => {
     return (
-        <div className={styles.container}>
-            <Sidebar/>
-            <ContentContainer/>
-        </div>
+        <DialogsContainer />
     );
 }
 
