@@ -5,9 +5,8 @@ import Content from '../Content/Content';
 import axios from 'axios';
 
 class Dialogs extends React.Component {
-    constructor(props) {
-        super(props);
-        axios.get(process.env.REACT_APP_DB_URL + '/dialogs.json').then(response => (this.props.setDialogs(response.data)));
+    componentDidMount() {
+        axios.get(process.env.REACT_APP_DB_URL + '.json').then(response => (this.props.setDialogs(response.data.dialogs)));
     }
 
     render() {
