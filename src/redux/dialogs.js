@@ -306,8 +306,8 @@ const dialogs = (state = initState, action) => {
     }
 }
 
-export const changeMessageActionCreator = (id, message) => ({type: CHANGE_MESSAGE, id, message});
-export const addMessageActionCreator = id => ({type: ADD_MESSAGE, id});
-export const setDialogsActionCreator = dialogs => ({type: SET_DIALOGS, dialogs});
+export const changeMessage = (id, message) => ({type: CHANGE_MESSAGE, id, message});
+export const addMessage = id => ({type: ADD_MESSAGE, id});
+export const setDialogs = dialogs => ({type: SET_DIALOGS, dialogs});
 
 export default dialogs;
