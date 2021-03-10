@@ -277,6 +277,7 @@ const dialogs = (state = initState, action) => {
                 })
             ];
         case ADD_MESSAGE:
+            console.log(state);
             return [
                 ...state.map((d, index) => {
                     if (d.id === action.id) {
@@ -302,12 +303,21 @@ const dialogs = (state = initState, action) => {
         case SET_DIALOGS:
             return [
                 ...state,
-                ...Object.keys(action.dialogs).map(key => {
-                    return {
-                        ...action.dialogs[key],
-                        id: key
+                ...Object.keys(action.dialogs).map(dialogKey => {
+                        return {
+                            ...action.dialogs[dialogKey],
+                            id: dialogKey,
+                            messages: [
+                                ...Object.keys(action.dialogs[dialogKey].messages).map(messageKey => {
+                                    return {
+                                        ...action.dialogs[dialogKey].messages[messageKey],
+                                        id: messageKey,
+                                    }
+                                })
+                            ]
+                        }
                     }
-                }),
+                ),
             ];
         default:
             return state;
