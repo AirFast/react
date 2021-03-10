@@ -300,7 +300,15 @@ const dialogs = (state = initState, action) => {
                 })
             ];
         case SET_DIALOGS:
-            return [...state, ...action.dialogs];
+            return [
+                ...state,
+                ...Object.keys(action.dialogs).map(key => {
+                    return {
+                        ...action.dialogs[key],
+                        id: key
+                    }
+                }),
+            ];
         default:
             return state;
     }
