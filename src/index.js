@@ -6,12 +6,25 @@ import {BrowserRouter} from 'react-router-dom';
 import store from './redux/redux-store';
 import reportWebVitals from './reportWebVitals';
 import {Provider} from 'react-redux';
+import ReactReduxFirebaseProvider from 'react-redux-firebase';
+import firebase from 'firebase/app';
+import firebaseConfig from './config/firebaseConfig';
+import {createFirestoreInstance} from 'redux-firestore';
+
+const rrfProps = {
+    firebase,
+    config: firebaseConfig,
+    dispatch: store.dispatch,
+    createFirestoreInstance
+};
 
 ReactDOM.render(
     <React.StrictMode>
         <BrowserRouter>
             <Provider store={store}>
-                <App/>
+                <ReactReduxFirebaseProvider {...rrfProps}>
+                    <App/>
+                </ReactReduxFirebaseProvider>
             </ Provider>
         </BrowserRouter>
     </React.StrictMode>,

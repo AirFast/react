@@ -2,7 +2,7 @@ import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth'
 
-var firebaseConfig = {
+const firebaseConfig = {
     apiKey:  process.env.REACT_APP_API_KEY, // "AIzaSyCjREgB1nJY7gM2jdgaAUbpsey7ekIXFl0"
     authDomain:  process.env.REACT_APP_AUTH_DOMAIN, // "react-airfast.firebaseapp.com"
     databaseURL: process.env.REACT_APP_DATABASE_URL, // "https://react-airfast-default-rtdb.firebaseio.com"

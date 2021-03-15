@@ -1,6 +1,7 @@
-const CHANGE_MESSAGE = 'CHANGE-MESSAGE';
-const ADD_MESSAGE = 'ADD-MESSAGE';
-const SET_DIALOGS = 'SET-DIALOGS';
+const CHANGE_MESSAGE = 'CHANGE_MESSAGE';
+const ADD_MESSAGE = 'ADD_MESSAGE';
+const SET_DIALOGS = 'SET_DIALOGS';
+const ADD_MESSAGE_ERROR = 'ADD_MESSAGE_ERROR'
 
 let initState = [];
 
@@ -57,25 +58,36 @@ const dialogs = (state = initState, action) => {
                     }
                 ),
             ];
+        case ADD_MESSAGE_ERROR:
+            console.log('Add message error', action.err);
+            return state;
         default:
             return state;
     }
 }
 
 export const changeMessage = (id, message) => {
-    return (dispatch, getState) => {
+    return (dispatch, getState, {getFirebase, getFirestore}) => {
         dispatch({type: CHANGE_MESSAGE, id, message});
     }
 }
 
 export const addMessage = id => {
-    return (dispatch, getState) => {
-        dispatch({type: ADD_MESSAGE, id});
+    return (dispatch, getState, {getFirebase, getFirestore}) => {
+        const firestore = getFirestore();
+        firestore.colection('dialogs').add({
+            ...id,
+            name: 'Andrew'
+        }).then(() => {
+            dispatch({type: ADD_MESSAGE, id});
+        }).catch((err) => {
+            dispatch({type: ADD_MESSAGE_ERROR, err});
+        });
     }
 }
 
 export const setDialogs = dialogs => {
-    return (dispatch, getState) => {
+    return (dispatch, getState, {getFirebase, getFirestore}) => {
         dispatch({type: SET_DIALOGS, dialogs});
     }
 }
