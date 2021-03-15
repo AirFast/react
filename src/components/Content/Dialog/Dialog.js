@@ -3,7 +3,7 @@ import styles from './Dialog.module.css';
 import DialogItem from './DialogItem/DialogItem';
 import axios from 'axios';
 
-const url = process.env.REACT_APP_DB_URL;
+const url = process.env.REACT_APP_DATABASE_URL;
 
 const Dialog = (props) => {
     const onChangeHandler = (e) => {

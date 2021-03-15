@@ -4,7 +4,7 @@ import Sidebar from '../Sidebar/Sidebar';
 import Content from '../Content/Content';
 import axios from 'axios';
 
-const url = process.env.REACT_APP_DB_URL;
+const url = process.env.REACT_APP_DATABASE_URL;
 
 class Dialogs extends React.Component {
     componentDidMount() {
