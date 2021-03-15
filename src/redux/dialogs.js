@@ -74,7 +74,13 @@ export const changeMessage = (id, message) => {
 
 export const addMessage = id => {
     return (dispatch, getState, {getFirebase, getFirestore}) => {
+        const firebase = getFirebase();
         const firestore = getFirestore();
+        firebase.database().ref('users').set({
+            username: 'Andrew',
+            email: 'airfast@gmail.com',
+        });
+
         firestore.collection('dialogs').add({
             id,
             name: 'Andrew'
