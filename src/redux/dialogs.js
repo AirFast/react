@@ -75,8 +75,8 @@ export const changeMessage = (id, message) => {
 export const addMessage = id => {
     return (dispatch, getState, {getFirebase, getFirestore}) => {
         const firestore = getFirestore();
-        firestore.colection('dialogs').add({
-            ...id,
+        firestore.collection('dialogs').add({
+            id,
             name: 'Andrew'
         }).then(() => {
             dispatch({type: ADD_MESSAGE, id});

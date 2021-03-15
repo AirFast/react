@@ -11,15 +11,15 @@ const Dialog = (props) => {
     }
 
     const onClickHandler = () => {
-        let today = new Date(),
-            hours = today.getHours() >= 10 ? today.getHours() : '0' + today.getHours(),
-            minutes = today.getMinutes() >= 10 ? today.getMinutes() : '0' + today.getMinutes();
-        let time = hours + ':' + minutes;
-        axios.post(url + '/dialogs/' + props.dialog.id + '/messages.json', {
-            with: false,
-            time: time,
-            text: props.dialog.stateMessage
-        });
+        // let today = new Date(),
+        //     hours = today.getHours() >= 10 ? today.getHours() : '0' + today.getHours(),
+        //     minutes = today.getMinutes() >= 10 ? today.getMinutes() : '0' + today.getMinutes();
+        // let time = hours + ':' + minutes;
+        // axios.post(url + '/dialogs/' + props.dialog.id + '/messages.json', {
+        //     with: false,
+        //     time: time,
+        //     text: props.dialog.stateMessage
+        // });
         props.addMessage(props.dialog.id);
     }
 

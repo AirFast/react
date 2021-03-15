@@ -6,17 +6,26 @@ import {BrowserRouter} from 'react-router-dom';
 import store from './redux/redux-store';
 import reportWebVitals from './reportWebVitals';
 import {Provider} from 'react-redux';
-import ReactReduxFirebaseProvider from 'react-redux-firebase';
-import firebase from 'firebase/app';
-import firebaseConfig from './config/firebaseConfig';
+import firebase from 'firebase/app'
+import 'firebase/auth'
+import 'firebase/database'
+import 'firebase/firestore'
+import {ReactReduxFirebaseProvider} from 'react-redux-firebase';
 import {createFirestoreInstance} from 'redux-firestore';
+import firebaseConfig from './config/firebaseConfig';
+
+firebase.initializeApp(firebaseConfig);
+firebase.firestore().settings({ timestampsInSnapshots: true });
 
 const rrfProps = {
     firebase,
-    config: firebaseConfig,
+    config: {
+        userProfile: 'users',
+        useFirestoreForProfile: true,
+    },
     dispatch: store.dispatch,
     createFirestoreInstance
-};
+}
 
 ReactDOM.render(
     <React.StrictMode>
