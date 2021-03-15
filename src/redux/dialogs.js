@@ -62,8 +62,22 @@ const dialogs = (state = initState, action) => {
     }
 }
 
-export const changeMessage = (id, message) => ({type: CHANGE_MESSAGE, id, message});
-export const addMessage = id => ({type: ADD_MESSAGE, id});
-export const setDialogs = dialogs => ({type: SET_DIALOGS, dialogs});
+export const changeMessage = (id, message) => {
+    return (dispatch, getState) => {
+        dispatch({type: CHANGE_MESSAGE, id, message});
+    }
+}
+
+export const addMessage = id => {
+    return (dispatch, getState) => {
+        dispatch({type: ADD_MESSAGE, id});
+    }
+}
+
+export const setDialogs = dialogs => {
+    return (dispatch, getState) => {
+        dispatch({type: SET_DIALOGS, dialogs});
+    }
+}
 
 export default dialogs;
